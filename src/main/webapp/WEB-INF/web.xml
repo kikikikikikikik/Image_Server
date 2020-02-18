@@ -13,4 +13,12 @@
         <servlet-name>ImageServlet</servlet-name>
         <url-pattern>/image</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ImageShowServlet</servlet-name>
+        <servlet-class>api.ImageShowServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ImageShowServlet</servlet-name>
+        <url-pattern>/imageShow</url-pattern>
+    </servlet-mapping>
 </web-app>

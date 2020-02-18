@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Image_Server:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Image_Server_jar</output-path>
+    <root id="archive" name="Image_Server.jar">
+      <element id="module-output" name="Image_Server" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.45/mysql-connector-java-5.1.45.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
