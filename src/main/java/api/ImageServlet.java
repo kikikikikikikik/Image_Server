@@ -108,9 +108,9 @@ public class ImageServlet extends HttpServlet {
         image.setuploadTime(simpleDateFormat.format(new Date()));
         image.setContentType(fileItem.getContentType());
         //构造一个路径来保存,引入时间戳是为了让文件路径能够唯一
-        image.setPath("桌面"+System.currentTimeMillis()+"_"+image.getImageName());
+        image.setPath("C:\\Users\\28893\\Pictures\\Saved Pictures"+System.currentTimeMillis()+"_"+image.getImageName());
         //MD5先不去计算
-        image.setMd5("11223344");
+        image.setMd5("1122");
         //存到数据库
         ImageDao imageDao = new ImageDao();
         imageDao.insert(image);
