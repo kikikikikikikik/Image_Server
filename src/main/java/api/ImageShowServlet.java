@@ -11,10 +11,21 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.HashSet;
 
 public class ImageShowServlet extends HttpServlet {
+    static private HashSet<String> whiteList = new HashSet<>();
+    static {
+        whiteList.add("http://127.0.0.1:8080/image_server/index.html");
+    }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String referer = req.getHeader("Referer");
+        if(!whiteList.contains(referer)){
+            resp.setContentType("application/json;charset=utf-8");
+            resp.getWriter().write("{\"ok\":false,\"reason\":\"未授权访问\"}");
+            return;
+        }
         //1.解析出imageId
         String imageId = req.getParameter("imageId");
         if(imageId == null || imageId.equals("")){
