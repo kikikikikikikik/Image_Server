@@ -100,7 +100,7 @@ public class ImageServlet extends HttpServlet {
             return;
         }
             //c）把 FileItem中的熟悉提取出来，转换成Imag对象，才能存到数据库中。
-            //当前只考虑一张图拍你的情况
+            //当前只考虑一张图片的情况
         FileItem fileItem = items.get(0);
         Image image = new Image();
         image.setImageName(fileItem.getName());
@@ -116,7 +116,7 @@ public class ImageServlet extends HttpServlet {
         image.setMd5(DigestUtils.md5Hex(fileItem.get()));
         //存到数据库
         ImageDao imageDao = new ImageDao();
-        //查看数据库中是否存在相同md5值得图片
+        //查看数据库中是否存在相同md5值的图片
         Image existImage = imageDao.selectByMd5(image.getMd5());
         imageDao.insert(image);
         //2.获取图片的内容信息，并且写入磁盘文件
